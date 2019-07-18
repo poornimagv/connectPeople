@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 17, 2019 at 05:45 PM
+-- Generation Time: Jul 18, 2019 at 10:29 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.1.27
 
@@ -44,35 +44,7 @@ INSERT INTO `tbl_login` (`id`, `uname`, `upassword`, `role`, `status`) VALUES
 (1, 'admin', 'admin', 'admin', '1'),
 (2, 'Nagu123', 'Nagu123', 'user', '1'),
 (3, 'Halesh123', 'Halesh123', 'user', '1'),
-(4, 'Shivu123', 'Shivu123', 'user', '1'),
-(5, 'pooh', '123', 'user', '1'),
-(6, 'adii', '123', 'user', '1'),
-(7, 'pavan', '123', 'user', '1'),
-(8, 'karan', '123', 'user', '-2'),
-(9, 'varun', '123', 'user', '1'),
-(10, 'poovan', '123', 'user', '1'),
-(11, 'varsha', '123', 'user', '1'),
-(12, 'pooh2', '123', 'user', '1'),
-(13, 'pooh3', '123', 'user', '1'),
-(14, 'pooh4', '123', 'user', '1'),
-(15, 'pooh31', '123', 'user', '1'),
-(16, 'pooh32', '123', 'user', '1'),
-(17, 'abc', '123', 'user', '1'),
-(18, 'abc1', '123', 'user', '1'),
-(19, 'abc2', '123', 'user', '1'),
-(20, 'abc1a', '123', 'user', '1'),
-(21, 'abc1b', '123', 'user', NULL),
-(22, 'test1', '123', 'user', NULL),
-(24, 'deepa', '123', 'user', '1'),
-(25, 'sonali', '123', 'user', '1'),
-(26, 'mona', '123', 'user', '1'),
-(27, 'lisa', '123', 'user', '1'),
-(28, 'aditya', '123', 'user', '1'),
-(29, 'mohan', '123', 'user', '1'),
-(32, '123', '123', 'user', NULL),
-(34, 'testabc', '123', 'user', NULL),
-(47, 'monali', '123', 'user', '1'),
-(53, 'mohan1', '123', 'user', NULL);
+(4, 'Shivu123', 'Shivu123', 'user', '1');
 
 -- --------------------------------------------------------
 
@@ -134,19 +106,6 @@ CREATE TABLE `tbl_referer_count` (
   `referer_referer` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `tbl_referer_count`
---
-
-INSERT INTO `tbl_referer_count` (`id`, `username`, `referer`, `referer_referer`) VALUES
-(6, 'karan', 'Direct', 'karan'),
-(9, 'deepa', 'karan', 'karan'),
-(10, 'sonali', 'karan', 'karan'),
-(11, 'monali', 'deepa', 'karan'),
-(12, 'lisa', 'deepa', 'karan'),
-(13, 'aditya', 'sonali', 'karan'),
-(24, 'mohan', 'sonali', 'karan');
-
 -- --------------------------------------------------------
 
 --
@@ -176,14 +135,7 @@ CREATE TABLE `tbl_register` (
 
 INSERT INTO `tbl_register` (`id`, `fname`, `lname`, `email`, `phone`, `bank`, `aname`, `anumber`, `uname`, `upassword`, `plan`, `refer_id`, `reference`, `status`) VALUES
 (10, 'Halesh', 'BV', 'Halesh@gmail.com', '75755257878', 'vijay VIJB11005', 'savings', '1224578512458', 'Halesh123', 'Halesh123', '1', '111002', '111001', 1),
-(11, 'Shivu', 'BS', 'Shivu@gmail.com', '75755257878', 'vijay VIJB11005', 'savings', '1224578512458', 'Shivu123', 'Shivu123', '1', '111003', '111001', 1),
-(54, 'karan', 'test', 'test@test.com', 'test', 'test', 'test', 'test', 'karan', '123', '1', '111004', 'Direct', -2),
-(57, 'deepa', 'test', 'test@test.com', 'test', 'test', 'test', 'test', 'deepa', '123', '1', '111005', 'karan', 1),
-(58, 'sonali', 'test', 'test@test.com', 'test', 'test', 'test', 'test', 'sonali', '123', '1', '111006', 'karan', 1),
-(59, 'mona', 'test', 'test@test.com', 'test', 'test', 'test', 'test', 'monali', '123', '1', '111007', 'deepa', 1),
-(60, 'lisa', 'test', 'test@test.com', 'test', 'test', 'test', 'test', 'lisa', '123', '1', '111008', 'deepa', 1),
-(61, 'aditya', 'test', 'test@test.com', 'test', 'test', 'test', 'test', 'aditya', '123', '1', '111009', 'sonali', 1),
-(73, 'mohan', 'test', 'test@test.com', 'test', 'test', 'test', 'test', 'mohan', '123', '1', '111010', 'sonali', 0);
+(11, 'Shivu', 'BS', 'Shivu@gmail.com', '75755257878', 'vijay VIJB11005', 'savings', '1224578512458', 'Shivu123', 'Shivu123', '1', '111003', '111001', 1);
 
 -- --------------------------------------------------------
 
@@ -304,27 +256,6 @@ INSERT INTO `tbl_trx` (`id`, `fname`, `refer_id`, `reference`, `counts`) VALUES
 (58, 'mohan', '111010', 'sonali', NULL),
 (59, 'mohan', '111010', 'sonali', NULL);
 
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_usergraph`
---
-
-CREATE TABLE `tbl_usergraph` (
-  `id` int(255) NOT NULL,
-  `username` varchar(255) DEFAULT NULL,
-  `userCount` int(50) NOT NULL,
-  `ReferedMember` varchar(255) NOT NULL,
-  `childMembers` longtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_usergraph`
---
-
-INSERT INTO `tbl_usergraph` (`id`, `username`, `userCount`, `ReferedMember`, `childMembers`) VALUES
-(0, 'karan', 1, 'test', 'child');
-
 --
 -- Indexes for dumped tables
 --
@@ -382,12 +313,6 @@ ALTER TABLE `tbl_transaction`
 -- Indexes for table `tbl_trx`
 --
 ALTER TABLE `tbl_trx`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tbl_usergraph`
---
-ALTER TABLE `tbl_usergraph`
   ADD PRIMARY KEY (`id`);
 
 --

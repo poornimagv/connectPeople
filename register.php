@@ -59,7 +59,7 @@ if($check==false) {
   $maxUsers = $cppl->maxReferer($referer_referer);
 
   // block user if user crosses 7 members
-  if ($maxUsers == 6){
+  if ($maxUsers == 3){
     $table = 'tbl_register';
     $test1 = $cppl->blockUser($table, $referer_referer);
     $table = 'tbl_login';
@@ -68,17 +68,10 @@ if($check==false) {
   $table='tbl_register';
   $count = $cppl->countReferer($table,$reference);
 
-  //echo '<pre>'; print_r($count); exit();
-
   if($count < 2){
 
   $cppl->insert_register($fname,$lname,$email,$phone,$bank,$aname,$anumber,$uname,$upassword,$plan,$refer_id,$reference);
-
-  if($referer_referer == 'Direct'){
-    $referer_referer = $reference;
-  }
   $cppl->insert_referal_detail($uname,$reference,$referer_referer);
-
 
   $table1='tbl_login';
   $role='user';

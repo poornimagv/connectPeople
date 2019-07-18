@@ -53,10 +53,11 @@ $check=$cppl->checkuser($uname);
 $check1=$cppl->check_refer_id($refer_id);
 if($check==false)
 {
+$reference = 'Direct';
 $cppl->insert_register($fname,$lname,$email,$phone,$bank,$aname,$anumber,$uname,$upassword,$plan,$refer_id,$reference);
 // changes
 $reference = 'Direct';
-$referer_referer = $uname
+$referer_referer = 'Direct';
 $cppl->insert_referal_detail($uname,$reference,$referer_referer);
 
 
